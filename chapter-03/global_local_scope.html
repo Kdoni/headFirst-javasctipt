@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function playTurn(player,location){
+            points =0;
+            //missing var (points) => global scope.
+            if (location ==1){
+                points+=100;
+            }
+            return points;
+        }
+        var total = playTurn("Jai",11);
+        console.log(total);
+        console.log(points);
+    </script>
+    
+</body>
+</html>
