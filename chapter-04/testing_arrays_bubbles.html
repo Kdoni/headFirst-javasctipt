@@ -8,25 +8,41 @@
 </head>
 <body>
     <script>
-        var scores = [60,61,50,60,58,54,54,58,50,52,54,48,69,34,55,51,52,44,51,69,64,66,55,52,61,46,31,57,52,44,18,41,53,55,61,51,44];
+        var scores = [60,50,60,58,54,54,58,50,52,54,48,69,34,55,51,52,44,51,69,64,66,55,52,61,46,31,57,52,44,18,41,53,55,61,51,44];
 
         var tests= scores.length;
         console.log("Bubble tests: " + tests);
         var max=scores[0];
+        var bubbleSolution;
+        let array = [];
         // var result;
-        for (let i=1;i<=scores.length-1;i++){
+        for (let i=0;i<=scores.length-1;i++){
+            // if(scores[i] === max) {
+            //     array.push(i)
+            // }
             if (max<scores[i]){
                 max=scores[i];
+                // array = []
+                // array.push(i)
                 // result=sample1;
                 // continue;
             }
+            
             // else{
             //     // scores[i]=sample1;
             //     // result=sample1;
             //     continue;
             // }
         }
-        console.log(max);
+        for (x=0;x<scores.length-1;x++){
+                    if (scores[x]==max){
+                        array.push(x);
+                    }
+                }
+
+        console.log("Highest bubble score: " + max);
+        console.log("Solutions with highest score: #" + array[0] + " " + "#"+ array[1]);
+
         
     </script>
     
