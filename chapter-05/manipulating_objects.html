@@ -10,6 +10,7 @@
     <script>
         function qualify(car){
             if (car.year<=1960 && car.mileage<=10000){
+                car.year=12222;
                 return true;
             }else{
                 return false;
@@ -21,6 +22,7 @@
         }
         var test = qualify(mazda);
         console.log(test);
+        console.log(mazda);
     </script>
     
 </body>
