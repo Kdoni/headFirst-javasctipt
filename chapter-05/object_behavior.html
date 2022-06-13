@@ -16,11 +16,34 @@
             passengers: 2,
             convertible: false,
             mileage: 88000,
+            started: false,
+            fuel: 0,
+            addFuel: function(amount){
+                this.fuel+=amount;
+            },
+            start: function(){
+                if (this.fuel>0){
+                    this.started=true;
+                }else{
+                    alert("We're low on fuel...");
+                }
+            },
+            stop: function(){
+                this.started=false;
+            },
             drive: function(){
-                alert("Vroom Vroom!");
+                if (this.started==false){
+                    alert("Turn on the engine to start the car.");
+                }else{
+                    alert("Vroom Vroom!");
+                }
             }
         };
+        fiat.addFuel(5);
+        console.log(fiat.fuel);
+        fiat.start();
         fiat.drive();
+
     </script>
     
 </body>

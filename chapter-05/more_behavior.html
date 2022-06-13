@@ -34,6 +34,10 @@
         fiat.start();
         fiat.drive();
         fiat.stop();
+        for (var prop in fiat){
+            console.log(prop + ": " + fiat[prop]);
+        }
+        console.log(fiat);
     </script>
     
 </body>
