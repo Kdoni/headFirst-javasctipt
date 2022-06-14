@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function unit(){
+        function init(){
         var planet = document.getElementById("greenplanet");
         planet.innerHTML = "Red Alert: hit by phaser fire!";
+        var coloring = document.getElementsByClassName("redText")[0];
+        coloring.style.color= "red";
         }
-        window.onload=unit;
+        window.onload=init;
     </script>
 </head>
 <body>
     <h1>Green Planet</h1>
-    <p id = "greenplanet">All is well</p>
+    <p id = "greenplanet" class="redText">All is well</p>
     <h1>Red Planet</h1>
     <p id = "redplanet">Nothing to report</p>
     <h1>Blue Planet</h1>
