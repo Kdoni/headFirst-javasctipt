@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        function checkTelephone(telephoneNumber){
+            var userP = prompt("Write down your phone number.");
+            if (userP.length!==8){
+                return false;
+            }
+            for (var i=0;i<userP.length;i++){
+                if (i===3){
+                    if (userP.charAt(i)!== "-"){
+                        return false;
+                    }
+                }else if (isNaN(userP.charAt(i))){
+                    return false;
+                }
+                
+            }
+            return true;
+        }
+        var telephone= 1233322222;
+        var test = checkTelephone(telephone);
+        console.log(test);
+    </script>
+    
+</body>
+</html>
