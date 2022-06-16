@@ -11,18 +11,19 @@
     <script>
         function checkTelephone(telephoneNumber){
             var userP = prompt("Write down your phone number.");
-            if (userP.length!==8){
+            if (userP.length>8 || userP.length<7){
                 return false;
             }
             for (var i=0;i<userP.length;i++){
                 if (i===3){
-                    if (userP.charAt(i)!== "-"){
+                    if (userP.length ===8 && userP.charAt(i)!== "-"){
                         return false;
                     }
+                }else if (userP.length===7 && isNaN(userP.charAt(i))){
+                    return false;
                 }else if (isNaN(userP.charAt(i))){
                     return false;
                 }
-                
             }
             return true;
         }

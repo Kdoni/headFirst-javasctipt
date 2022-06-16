@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function telephoneValidator(telephoneNumber){
+            var userP = prompt("Please insert your telephone number.");
+            if (userP ===null){
+                return "Invalid Input."
+            }else if (userP.length !==8){
+                return false;
+            }
+            var portion1 = userP.slice(0,3);
+            var portion2 = userP.slice(4);
+            if (userP[3]!=="-" || isNaN(portion1) || isNaN(portion2)){
+                //When you insert an empty space instead of a number, except the 3rd index, it still returns true.
+                return false;
+            }
+            return true;
+        }
+        var test = telephoneValidator(12222222);
+        console.log(test);
+        
+    </script>
+    
+</body>
+</html>
