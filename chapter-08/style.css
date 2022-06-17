@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    width: 100vw;
+}
+.circle{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: transparent;
+    height: 80vh;
+    width: 80vh;
+    border: 1vh solid white;
+}
+
+.one{
+    height: 70vh;
+    width: 70vh;
+}
+.two{
+    height: 50vh;
+    width: 50vh;
+}
+.three{
+    height: 30vh;
+    width: 30vh;
+}
+.diagonal{
+    background-color: white;
+    height: 100%;
+    width :3%;
+    transform: rotate(45deg);
+    border-radius: 20%;
+}
+.board{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    background-color: lightgray;
+    height: 5vh;
+    width: 20vh;
+    padding-left :1%;
+    padding-right: 1%;
+    align-self: flex-end;
+    right: 0;
+    
+}
+
+input{
+    width: 15vh;
+    height: 2vh;
+}
+button{
+    width: 15vh;
+    height: 2.25vh;
+}
