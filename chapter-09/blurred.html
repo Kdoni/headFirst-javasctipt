@@ -9,15 +9,44 @@
         body{
             margin: 20px;
         }
+        img{
+            margin:20px;
+        }
     </style>
     <script>
         window.onload=init;
         function init(){
-            var image = document.getElementById("zero");
-            image.onclick = clearImage;
-            function clearImage(){
-                var image = document.getElementById("zero");
-                image.setAttribute("src","zero.jpg");
+            var images = document.getElementsByTagName("img");
+            for (var i=0;i<images.length;i++){
+                images[i].onclick=clearImage;
+            }
+            // var image = document.getElementById("zero");
+            // image.onclick = clearImage;
+            function clearImage(eventObj){
+                var image = eventObj.target;
+                var name = image.id;
+                image.src = name + ".jpg";
+                setTimeout(() => {
+                    image.src= name + "blur.jpg";
+                    
+                }, 2000);
+                // if (image.src.includes("blur")){
+                //     image.src =name  + ".jpg";
+                // }else{
+                //     image.src = name  + "blur.jpg";
+                // }
+                // var images = document.getElementsByTagName("img");
+                // for (var i=0;i<images.length;i++){
+                //     var attribute =images[i].getAttribute("src");
+                //     console.log(attribute);
+                // }
+                // var image = document.getElementById("zero");
+                // const cringe = image.getAttribute("src");
+                // if (cringe==="zero.jpg"){
+                //     image.src="zeroblur.jpg";
+                // }else{
+                //     image.src="zero.jpg";
+                // }
                 //or simply img.src="zero.jpg";
             }
         }
@@ -25,5 +54,10 @@
 </head>
 <body>
     <img id="zero" src="zeroblur.jpg">
+    <img id="one" src="oneblur.jpg">
+    <img id="two" src = "twoblur.jpg">
+    <img id="three" src = "threeblur.jpg">
+    <img id = "four" src = "fourblur.jpg">
+    <img id = "five" src = "fiveblur.jpg">
 </body>
 </html>
