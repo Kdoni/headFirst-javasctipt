@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 20px;
+        }
+    </style>
+    <script>
+        window.onload=init;
+        function init(){
+            var image = document.getElementById("zero");
+            image.onclick = clearImage;
+            function clearImage(){
+                var image = document.getElementById("zero");
+                image.setAttribute("src","zero.jpg");
+                //or simply img.src="zero.jpg";
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="zero" src="zeroblur.jpg">
+</body>
+</html>
