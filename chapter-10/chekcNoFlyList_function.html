@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var passengers = [ {
+            name: "Jane Doloop",
+            paid: true
+        },{
+            name: "Dr. Evel",
+            paid: true
+        },{
+            name: "Sue Property",
+            paid: false
+        },{
+            name: "John Funcal",
+            paid: true
+        },{
+            name: "Envans",
+            paid: false
+        },{
+            name: "Chris",
+            paid: true
+        }];
+        var noFlyList = ["Envans","Chris","Jane Doloop"];
+        function checkNoFlyList (list){
+            for (var i=0;i<list.length;i++){
+                if (noFlyList.includes(list[i])){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function checkNotPaid(passenger){
+                if (passenger.paid===false){
+                    return "The passenger hasn't paid."
+                }
+            }
+        var test = checkNoFlyList(noFlyList);
+        console.log(test);
+        var test2 = checkNotPaid(passengers.name[1]);
+        console.log(test2);
+        
+    </script>
+    
+</body>
+</html>
