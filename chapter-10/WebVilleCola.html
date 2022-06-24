@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var products = [ {
+            name: "Grapefruit",
+            calories: 170,
+            color: "red",
+            sold: 8200
+        },{
+            name: "Orange",
+            calories: 160,
+            color: "orange",
+            sold: 12101
+        },{
+            name: "Cola",
+            calories: 210,
+            color: "caramel",
+            sold: 25412
+        },{
+            name: "Diet Cola",
+            calories: 0,
+            color: "caramel",
+            sold: 43922
+        },{
+            name: "Lemon",
+            calories: 200,
+            color: "clear",
+            sold: 14983
+        },{
+            name: "Raspberry",
+            calories: 180,
+            color: "pink",
+            sold: 9427
+        },{
+            name: "Root Beer",
+            calories: 200,
+            color: "caramel",
+            sold: 9909
+        },{
+            name: "Water",
+            calories: 0,
+            color: "clear",
+            sold: 62123
+        }];
+
+        function compareNumbers(num1,num2){
+            return num2-num1;
+        }
+        // var numbersArray = [60,52,62,58,54,54];
+        // numbersArray.sort(compareNumbers);
+        // console.log(numbersArray);
+        // var emptyArray= [];
+        // for (var i =0;i<products.length;i++){
+        //     emptyArray.push(products[i].sold);
+        // }
+        // emptyArray.sort(compareNumbers);
+        // console.log(emptyArray);
+        // products.sort((num1,num2)=>compareNumbers(num1.sold,num2.sold));
+        // console.log(products);
+        function compareSold(product1,product2){
+            return product1.sold-product2.sold;
+        }
+        products.sort(compareSold);
+        console.log(products);
+    </script>
+    
+</body>
+</html>
