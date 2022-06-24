@@ -27,23 +27,82 @@
         },{
             name: "Envans",
             paid: true,
-            ticket: "coach"
+            ticket: "premium"
         },{
             name: "Chris",
             paid: true,
             ticket: "fistclass"
         }];
         function serveCustomer(passenger){
-            createDrinkOrder(passenger);
-            
+            var getDrinkOrderFunction = createDrinkOrder(passenger);
+            getDrinkOrderFunction();
+            var getDinnerOrderFunction = createDinnerOrder(passenger);
+            getDinnerOrderFunction();
+            var getMovieOrderFunction = createMovieOrder(passenger);
+            getMovieOrderFunction();
         }
-        function createDrinkOrder(passenger){
-            if (passenger.ticket==="firstclass"){
-                alert("Would you like some wine or a cocktail");
+        function createMovieOrder(passenger){
+            var orderFunction;
+            if(passenger.ticket==="firstclass"){
+                orderFunction = function(){
+                    alert("Sit back and enjoy the latest movie!");
+                }
+            }else {
+                orderFunction = function(){
+                    alert("You do deserve nothing, poor peasant...");
+                }
+            }
+            return orderFunction;
+        }
+        //Movie
+
+        function createDinnerOrder(passenger){
+            var orderFunction;
+            if(passenger.ticket==="firstclass"){
+                orderFunction=function(){
+                    alert("Would you like some chicken or pasta?")
+                }
+            }else if(passenger.ticket==="premium"){
+                orderFunction=function(){
+                    alert("Would you like a snack box or a cheese plate?");
+                }
             }else{
-                alert("Would you like some water or a cola?");    
+                orderFunction=function(){
+                    alert("Would you like some peanuts or some pretzels?");
+                }
+            }
+            return orderFunction;
+        }
+        //Dinner
+
+        function createDrinkOrder(passenger){
+            var orderFunction;
+            if (passenger.ticket==="firstclass"){
+                orderFunction =function(){
+                    alert("Would you like some wine or a cocktail");
+                };
+            }else if (passenger.ticket==="premium"){
+                orderFunction = function(){
+                    alert("Would you like either some wine, cola, or water");
+                };
+            }else{
+                orderFunction=function(){
+                    alert("Only water or cola for you peasant...");
+                }
+            }
+            return orderFunction;
+        }
+        //Drink.
+
+        function servePassengers(passengers){
+            for (var i = 0; i<passengers.length;i++){
+                serveCustomer(passengers[i]);
             }
         }
+        servePassengers(passengers);
+
+        //We create a function that iterates through the list of passengers(objects)
+        //and call another function with argument each of the passengers, one
     </script>
     
 </body>
