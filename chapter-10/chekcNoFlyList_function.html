@@ -16,13 +16,13 @@
             paid: true
         },{
             name: "Sue Property",
-            paid: false
+            paid: true
         },{
             name: "John Funcal",
             paid: true
         },{
             name: "Envans",
-            paid: false
+            paid: true
         },{
             name: "Chris",
             paid: true
@@ -38,14 +38,18 @@
         }
 
         function checkNotPaid(passenger){
-                if (passenger.paid===false){
-                    return "The passenger hasn't paid."
+            var allHavePaid = true;
+            for (var i=0;i<passenger.length;i++){
+                if (passenger[i].paid===false){
+                    console.log(passenger[i].name);
+                    allHavePaid=false;
                 }
             }
-        var test = checkNoFlyList(noFlyList);
+            return allHavePaid;
+        }
+
+        const test=checkNotPaid(passengers);
         console.log(test);
-        var test2 = checkNotPaid(passengers.name[1]);
-        console.log(test2);
         
     </script>
     
