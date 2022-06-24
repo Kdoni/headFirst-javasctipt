@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var passengers = [ {
+            name: "Jane Doloop",
+            paid: true,
+            ticket: "coach"
+        },{
+            name: "Dr. Evel",
+            paid: true,
+            ticket: "firstclass"
+        },{
+            name: "Sue Property",
+            paid: true,
+            ticket: "firstclass"
+        },{
+            name: "John Funcal",
+            paid: false,
+            ticket: "coach"
+        },{
+            name: "Envans",
+            paid: true,
+            ticket: "coach"
+        },{
+            name: "Chris",
+            paid: true,
+            ticket: "fistclass"
+        }];
+        function serveCustomer(passenger){
+            createDrinkOrder(passenger);
+            
+        }
+        function createDrinkOrder(passenger){
+            if (passenger.ticket==="firstclass"){
+                alert("Would you like some wine or a cocktail");
+            }else{
+                alert("Would you like some water or a cola?");    
+            }
+        }
+    </script>
+    
+</body>
+</html>
