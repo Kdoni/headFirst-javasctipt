@@ -19,7 +19,7 @@
             paid: true
         },{
             name: "John Funcal",
-            paid: true
+            paid: false
         },{
             name: "Envans",
             paid: true
@@ -31,10 +31,10 @@
         function checkNoFlyList (list){
             for (var i=0;i<list.length;i++){
                 if (noFlyList.includes(list[i])){
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
 
         function checkNotPaid(passenger){
@@ -47,9 +47,31 @@
             }
             return allHavePaid;
         }
+        function processPassengers(passengers,printPassenger){
+            for (var i=0;i<passengers.length;i++){
+                if (printPassenger(passengers[i])){
+                    return false;
+                }
+            }
+            return true;
+        }
 
-        const test=checkNotPaid(passengers);
-        console.log(test);
+        var allCanFly = processPassengers(passengers,checkNoFlyList);
+            if (!allCanFly){
+                console.log("The plane can't take off: Someone is on the noFlyList");
+            }
+        
+            var allPaid = processPassengers(passengers,checkNotPaid);
+            if (!allPaid){
+                console.log("The plane can't take off: Someone has not paid");
+            }
+        
+        function printPassenger(passenger){
+            for (var i =0;i<passenger.length;i++){
+                console.log(passenger[i]);
+            }
+        }
+        printPassenger(passengers);
         
     </script>
     
