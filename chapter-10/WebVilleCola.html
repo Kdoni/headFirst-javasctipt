@@ -67,8 +67,34 @@
         function compareSold(product1,product2){
             return product1.sold-product2.sold;
         }
-        products.sort(compareSold);
-        console.log(products);
+        function compareName(product1,product2){
+            if (product1.name > product2.name){
+                return 1;
+            }else if (product1.name===product2.name){
+                return 0;
+            }else{
+                return -1;
+            }
+        }
+        function compareColor(product1,product2){
+            if (product1.color > product2.color){
+                return 1;
+            }else if (product1.color===product2.color){
+                return 0;
+            }else{
+                return -1;
+            }
+        }
+        function compareCalories(product1,product2){
+            return product1.calories-product2.calories;
+        }
+        function printProducts(products){
+            for (var i = 0;i<products.length;i++){
+                console.log("Name: " + products[i].name + ", Calories: " + products[i].calories + ", Color: " + products[i].color + ", Sold: " + products[i].sold);
+            }
+        }
+        products.sort(compareColor);
+        printProducts(products);
     </script>
     
 </body>
