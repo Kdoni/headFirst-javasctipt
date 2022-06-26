@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var justAVar = "Oh, don't worry about it, I'm GLOBAL.";
+        function whereAreYou(){
+            justAVar = "Just an every day LOCAL";
+            function inner(){
+                return justAVar;
+            }
+            return inner();
+        }
+        var innerFunction = whereAreYou;
+        var result = innerFunction();
+        console.log(result);
+    </script>
+    
+</body>
+</html>
