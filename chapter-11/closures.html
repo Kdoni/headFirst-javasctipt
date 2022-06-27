@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var count = 0;
+        // function counter(){
+        //     count+=1;
+        //     return count;
+        // }
+        // console.log(counter());
+        // console.log(counter());
+        // console.log(counter());
+
+        function makeCounter(){
+            var count = 0;
+            function counter(){
+                count+=1;
+                return count;
+            }
+            return counter;
+        }
+        // console.log(makeCounter()())
+        var test = makeCounter()();
+        console.log(test);
+        console.log(test);
+
+        // console.log(makeCounter()());
+        // console.log(makeCounter()());
+        // console.log(makeCounter()());
+        // console.log(makeCounter()());
+        // console.log(makeCounter()());
+
+        // console.log(makeCounter());
+        // console.log(makeCounter());
+
+        // console.log(makeCounter());
+        
+        // console.log(test());
+        // console.log(test());
+        // console.log(test());
+
+    </script>
+    
+</body>
+</html>
