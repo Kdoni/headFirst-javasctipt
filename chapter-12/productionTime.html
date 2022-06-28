@@ -8,15 +8,15 @@
 </head>
 <body>
     <script>
-        function Car(make, model, year, color, passengers, convertible, mileage,started){
-            this.make = make;
-            this.model = model;
-            this.year = year;
-            this.color = color;
-            this.passengers = passengers;
-            this.convertible = convertible;
-            this.mileage = mileage;
-            this.started = started;
+        function Car(parameters){
+            this.make = parameters.make;
+            this.model = parameters.model;
+            this.year = parameters.year;
+            this.color = parameters.color;
+            this.passengers = parameters.passengers;
+            this.convertible = parameters.convertible;
+            this.mileage = parameters.mileage;
+            this.started = false;
             this.start = function(){
                 this.started = true;
             };
@@ -32,10 +32,25 @@
             }
         }
 
-        var chevy = new Car("Chevy", "Bel Air", 1957, "red", 2, false, 1021, false);
-        var fiat = new Car("Fiat", "500", 1957, "Medium Blue", 2, false, 88000, false);
-        var cadi = new Car("GM", "Cadillac", 1955, "tan", 5, false, 12892, false);
-        var taxi = new Car("Webville Motors", "Taxi", 1955, "yellow", 4, false, 281341, false);
+        var chevy = new Car("Chevy", "Bel Air", 1957, "red", 2, false, 1021);
+        var fiat = new Car("Fiat", "500", 1957, "Medium Blue", 2, false, 88000);
+        // var cadi = new Car("GM", "Cadillac", 1955, "tan", 5, false, 12892, false);
+        var taxi = new Car("Webville Motors", "Taxi", 1955, "yellow", 4, false, 281341);
+
+        var cadiParameters = {
+            make: "GM",
+            model: "Cadillac",
+            year: 1955,
+            color: "tan",
+            passengers: 5,
+            convertible: false,
+            mileage: 12892
+        };
+        var cadi = new Car(cadiParameters);
+        taxi.drive();
+        taxi.stop();
+        taxi.start();
+        taxi.drive();
     </script>
     
 </body>
