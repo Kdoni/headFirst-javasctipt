@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beep Beep</title>
+    <title>Document</title>
 </head>
 <body>
     <script>
+        function Dog (name,breed,weight){
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
+            this.bark = function(){
+                if (this.weight>25){
+                    alert(this.name + " says Woof");
+                }else{
+                    alert(this.name + " says Yip!");
+                }
+            }
+        };
+
         function Car(parameters){
             this.make = parameters.make;
             this.model = parameters.model;
@@ -32,25 +45,20 @@
             }
         };
 
-        var chevy = new Car("Chevy", "Bel Air", 1957, "red", 2, false, 1021);
-        var fiat = new Car("Fiat", "500", 1957, "Medium Blue", 2, false, 88000);
-        // var cadi = new Car("GM", "Cadillac", 1955, "tan", 5, false, 12892, false);
-        var taxi = new Car("Webville Motors", "Taxi", 1955, "yellow", 4, false, 281341);
-
-        var cadiParameters = {
-            make: "GM",
-            model: "Cadillac",
-            year: 1955,
-            color: "tan",
-            passengers: 5,
-            convertible: false,
-            mileage: 12892
+        var limoParams = {
+            make: "Webville Motors",
+            model: "limo",
+            year: 1983,
+            color: "black",
+            passengers: 12,
+            convertible: true,
+            mileage: 21120
         };
-        var cadi = new Car(cadiParameters);
-        taxi.drive();
-        taxi.stop();
-        taxi.start();
-        taxi.drive();
+        var limo = new Car(limoParams);
+        var limoDog = new Dog("Rhapsody in Blue", "Poodle", 40);
+
+        console.log(limo.make + " " + limo.model + " is a " + typeof limo);
+        console.log(limoDog.name + " is a " + typeof limoDog);
     </script>
     
 </body>
