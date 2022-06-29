@@ -9,10 +9,11 @@
 <body>
     <script>
         function dogCatcher(obj){
-            if (obj instanceof Dog===false){
-                return false
-            }
-           return true;
+        //     if (obj instanceof Dog===false){
+        //         return false
+        //     }
+        //    return true;
+            return (obj instanceof Dog);
         }
         function Cat(name,breed,weight){
             this.name = name;
