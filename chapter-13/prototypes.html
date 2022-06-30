@@ -31,6 +31,11 @@
             console.log("Wag");
         }
 
+        Dog.prototype.sit = function(){
+            console.log(this.name + " is now sitting");
+        }
+
+        var barnaby = new Dog ("Barnaby", "Basset Hound", 55);
         var fido = new Dog ("Fido", "Mixed", 38);
         var fluffy = new Dog ("Fluffy", "Poodle", 30);
         var spot = new Dog ("Spot", "Chihuahua", 10);
@@ -38,18 +43,19 @@
         spot.bark = function(){
             console.log(this.name + " says Woof!");
         };
+        barnaby.sit();
 
-        fido.bark();
-        fido.run();
-        fido.wag();
+        // fido.bark();
+        // fido.run();
+        // fido.wag();
 
-        fluffy.bark();
-        fluffy.run();
-        fluffy.wag();
+        // fluffy.bark();
+        // fluffy.run();
+        // fluffy.wag();
 
-        spot.bark();
-        spot.run();
-        spot.wag();
+        // spot.bark();
+        // spot.run();
+        // spot.wag();
     </script>
     
 </body>
