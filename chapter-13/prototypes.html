@@ -31,9 +31,18 @@
             console.log("Wag");
         }
 
+        Dog.prototype.sitting = false;
+
         Dog.prototype.sit = function(){
-            console.log(this.name + " is now sitting");
+            if (this.sitting){
+                console.log(this.name + " is already sitting.");
+            }else{
+                this.sitting = true;
+                console.log(this.name + " is sitting now.");
+            }
         }
+        
+        
 
         var barnaby = new Dog ("Barnaby", "Basset Hound", 55);
         var fido = new Dog ("Fido", "Mixed", 38);
@@ -44,6 +53,9 @@
             console.log(this.name + " says Woof!");
         };
         barnaby.sit();
+        barnaby.sit();
+        spot.sit();
+        spot.sit();
 
         // fido.bark();
         // fido.run();
@@ -56,6 +68,10 @@
         // spot.bark();
         // spot.run();
         // spot.wag();
+        var test = spot.hasOwnProperty("species");
+        console.log(test);
+        var test1 = fido.hasOwnProperty("species");
+        console.log(test1);
     </script>
     
 </body>
