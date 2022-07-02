@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        String.prototype.palindrome = function(){
+            var reversed = [];
+            // var word = this.toString();
+            for (var i=this.length-1;i>=0;i--){
+                reversed.push(this[i]);
+            }
+            reversedF = reversed.join("");
+            if (this.toString()===reversedF){
+                return "They're palindrome.";
+            }else{
+                return "They're not palindrome.";
+            }
+        }
+        var test = "rotator".palindrome();
+        console.log(test);
+        // var phrase = "aab aa";
+        // var reversed = [];
+        // for (var i=phrase.length-1;i>=0;i--){
+        //     reversed.push(phrase[i]);
+        // }
+        // var reversed2 = reversed.join("");
+        // if (phrase ===reversed2){
+        //     console.log("They are palindrome")
+        // }else{
+        //     console.log("They're not palindrome");
+        // }
+    </script>
+    
+</body>
+</html>
